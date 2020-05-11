@@ -10,6 +10,9 @@ The ```stream_taxi_data.py``` allows to stream a dataset through a socket on a g
 To stream the NY datasets:
 
 Go to this directory:
+
 ```cd ece-spark/structured-streaming```
+
 Run the ```stream_taxi-data.py``` script. The script has 3 parameters: the server name to use to stream the data, the port on which to open the socket, the dataset to stream (can be either ```fares``` or ```rides```)
+
 ```python3 stream_taxi_data.py edge1.au.adaltas.cloud 11111 fares```
