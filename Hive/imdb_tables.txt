@@ -1,0 +1,44 @@
+imdb_name_basics
++--------------------+----------------+----------+
+|      col_name      |   data_type    | comment  |
++--------------------+----------------+----------+
+| nconst             | string         |          |
+| primaryname        | string         |          |
+| birthyear          | int            |          |
+| deathyear          | int            |          |
+| primaryprofession  | array<string>  |          |
+| knownfortitles     | array<string>  |          |
++--------------------+----------------+----------+
+
+imdb_title_basics
++-----------------+----------------+----------+
+|    col_name     |   data_type    | comment  |
++-----------------+----------------+----------+
+| tconst          | string         |          |
+| titletype       | string         |          |
+| primarytitle    | string         |          |
+| originaltitle   | string         |          |
+| isadult         | tinyint        |          |
+| startyear       | int            |          |
+| endyear         | int            |          |
+| runtimeminutes  | int            |          |
+| genres          | array<string>  |          |
++-----------------+----------------+----------+
+
+imdb_title_crew
++-----------+----------------+----------+
+| col_name  |   data_type    | comment  |
++-----------+----------------+----------+
+| tconst    | string         |          |
+| director  | array<string>  |          |
+| writers   | array<string>  |          |
++-----------+----------------+----------+
+
+imdb_title_ratings
++----------------+------------+----------+
+|    col_name    | data_type  | comment  |
++----------------+------------+----------+
+| tconst         | string     |          |
+| averagerating  | double     |          |
+| numvotes       | int        |          |
++----------------+------------+----------+
