@@ -1,0 +1,28 @@
+<workflow-app xmlns = "uri:oozie:workflow:0.4" name = "certified-drivers">
+  <global>
+    <job-tracker>${jobTracker}</job-tracker>
+    <name-node>${nameNode}</name-node>
+  </global>
+
+  <start to = "create_csv_table" />
+
+  <action name = "create_csv_table">
+    <hive2 xmlns = "uri:oozie:hive2-action:0.1">
+    	<job-tracker>${jobTracker}</job-tracker>
+	    <name-node>${nameNode}</name-node>
+      <jdbc-url>${jdbcUrl}</jdbc-url>
+      <script>scripts/csv_table.hql</script> <!-- This is a HDFS path -->
+    </hive2>
+    <ok to = "end" /> <!-- points to the next action -->
+    <error to = "kill_job" />
+  </action>
+
+  <!-- Try to chain more actions here -->
+
+
+  <kill name = "kill_job">
+    <message>Job failed</message>
+  </kill>
+
+  <end name = "end" />
+</workflow-app>
